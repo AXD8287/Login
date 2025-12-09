@@ -93,7 +93,7 @@ def main():
                 attempts[0] = 3
                 status[0] = False
                 print("\nQuitting...")
-                sleep(1)
+                time.sleep(1)
                 break
             case _:
                 value = input("\nPlease enter a valid opton!\n1. Login\n2. Create Account\n3. Quit\nChoose Option: ")
