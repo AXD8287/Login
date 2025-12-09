@@ -1,14 +1,16 @@
+"""
+Name: Arush
+Description: Login/Signup program. It was coded in VSCode instead of codehs since codehs wasn't properly storing the .csv file.
+"""
 import pandas as pd
-import string
-import time 
-import random
+import string, time, random
 attempts = [3]
 status = [False]
 def check_password_strength():
     password = input("Create your secure password: ")
     is_strong = False
     while is_strong == False:
-        if len(password)<=8:
+        if len(password)<8:
             print("You need atleast 8 characters!")
         if any(p.isupper() for p in password) != True:
             print("Atleast 1 uppercase letter!")
@@ -87,14 +89,12 @@ def main():
                     createAccount()
                     value = input("1. Login\n2. Create Account\n3. Quit\nChoose Option: ")
                 else:
-                    print("You must be logged out to create an account!\n")
-                    value = input("1. Logout\n2. Create Account\n3. Quit\nChoose Option: ")
+                    value = input("You must be logged out to create an account!\n1. Logout\n2. Create Account\n3. Quit\nChoose Option: ")
             case "3":
                 attempts[0] = 3
                 status[0] = False
                 print("\nQuitting...")
-                time.sleep(1)
                 break
             case _:
-                value = input("\nPlease enter a valid opton!\n1. Login\n2. Create Account\n3. Quit\nChoose Option: ")
+                value = input("\nPlease enter a valid option!\n1. Login\n2. Create Account\n3. Quit\nChoose Option: ")
 main()
